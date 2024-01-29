@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Todo Htmx</title>
+</head>
+<body>
+    <h1>Todo Testing</h1>
+    <div class="dataWrapper">
+        <div class="button-case">
+            <button 
+            class="get-data bg-blue-500 text-white py-2 px-3 my-5"
+            hx-get="/home"
+            hx-target="#display-window"
+            >
+        </button>
+        <div id="display-window"></div>
+        </div>
+        
+
+    </div>
+    
+</body>
+</html>
