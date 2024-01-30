@@ -1,13 +1,15 @@
 import express from "express";
 import morgan from "morgan";
 import helmet from "helmet";
-
+import todoRoutes from "./routes/todo.js";
 const app = express();
 
 app.use(express.json());
 app.use(express.static('public'));
 app.use(morgan("combined"));
 app.use(helmet());
+
+app.use("/todo", todoRoutes);
 
 app.get("/home", (req, res) => {
     res.status(200).send("<h1> Hello World </h1>");
