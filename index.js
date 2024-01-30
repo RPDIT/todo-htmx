@@ -13,15 +13,16 @@ app.use(express.static('public'));
 app.use(morgan("combined"));
 app.use(helmet());
 
-app.use("/todo", todoRoutes);
+
+app.set("views", './views');
+app.set("view engine", "pug");
 
 app.get("/home", (req, res) => {
     res.status(200).send("<h1> Hello World </h1>");
 })
 
-app.set("views", './views');
-app.set("view engine", "pug");
 
+app.use("/todo", todoRoutes);
 app.get('/pug', (req, res) => {
     res.render('index', { title: 'Hey', message: 'Hello there!' })
   })
