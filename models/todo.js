@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const todoSchema = new mongoose.Schema({
     name:{
         type:String,
-        required: true,
+        required: [true, "A name is required"] 
     },
     completed:{
         type:Boolean,
