@@ -8,25 +8,27 @@
     <title>Todo Htmx</title>
 </head>
 <body>
-    <h1>Todo Testing</h1>
-    <div class="dataWrapper">
-        <div class="button-case">
-            <button 
-             class="get-data bg-blue-500 text-white py-2 px-3 my-5"
-             hx-get="/todo"
-             hx-target="#display-window"
-             >
-            </button>
+    <div class="grid grid-cols-3">
+        <div class="grid dataWrapper text-center py-20 px-3 my-5">
+            <h1>Todo Testing</h1>
+            <div class="button-case">
                 <button 
-             class="get-data bg-blue-500 text-white py-2 px-3 my-5"
-             hx-get="/home"
-             hx-target="#display-window"
-             >
+                 class="get-data bg-blue-500 text-white py-2 px-3 my-5"
+                 hx-get="/todo"
+                 hx-target="#display-window"
+                 >Get Todos
                 </button>
-                    <div id="display-window"></div>
+                    <button 
+                 class="get-data bg-blue-500 text-white py-2 px-3 my-5"
+                 hx-get="/pug"
+                 hx-target="#display-window"
+                 >Get Home
+                    </button>
+            </div>    
         </div>
-
+        <div id="display-window" class="grid grid-cols-subgrid col-span-2"></div>
     </div>
+    
 
     
 </body>
