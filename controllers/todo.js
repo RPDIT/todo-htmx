@@ -6,7 +6,11 @@ import ToDo from "../models/todo.js";
 const allTodo = ah(async(req, res) => {
     try {
         let results = await ToDo.find();
-        res.status(200).render("todoTable", {todos: results});
+        if (results.length == 0){ 
+            res.status(200).send("<h1>No Todos</h1>");
+        } else {
+            res.status(200).render("todoTable", {todos: results});
+        }
     } catch (error) {
         
     }
