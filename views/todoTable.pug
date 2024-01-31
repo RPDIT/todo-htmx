@@ -5,11 +5,18 @@ html
       each todo in todos
         li(
           class=`${todo.completed ? "bg-lime-500": "bg-red-500"}`
-          hx-on:click=`console.log("render the info panel here ${todo.name}")` 
+          hx-get=`/todo/${todo.id}`
+          hx-on:click=`console.log("render the info panel here ${todo.name}")`
+          hx-trigger="click"
+          hx-target="#todoInfo"
           )
           // on click will provide current todo's info to the included info section that will be rednered. 
           h2.text-center="Name: " + todo.name
           if todo.description
             p.description="Description: " + todo.description
           p.completed.text-right="Completed: " + todo.completed 
+    #todoInfo(
+      class="grid text-left bg-grey-500 py-3"
+      )
+
 

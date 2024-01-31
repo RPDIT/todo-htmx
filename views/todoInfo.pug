@@ -1,0 +1,7 @@
+html 
+    h2.text-center=todo.name
+    if todo.description 
+    p.px-3.py-5=todo.description
+    p.text-right=todo.completed 
+    p.text-left.edited=todo.edited 
+    p.text-left.created=todo.created
