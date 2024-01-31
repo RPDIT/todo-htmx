@@ -41,9 +41,19 @@ const completeTodo = ah(async(req, res) => {
     }
 })
 
+const todoById = ah(async(req, res) => {
+    let id = req.params.id;
+    try {
+        res.status(200).render("todoInfo.pug", {todo:await TodoQueries.getById(id)});
+    } catch (error) {
+        res.status(400).send("Error!" + error);
+    }    
+})
+
 
 export default {
     allTodo,
     newTodo,
-    completeTodo 
+    completeTodo,
+    todoById
 };

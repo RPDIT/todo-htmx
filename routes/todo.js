@@ -4,6 +4,7 @@ const router = express.Router();
 
 
 router.get("/", TodoController.allTodo); 
+router.get("/:id", TodoController.todoById);
 router.post("/creation", TodoController.newTodo); 
 
 
